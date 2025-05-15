@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
 import { Navbar } from "./components/nav-bar";
 
-const geistSans = Geist( {
-  variable: "--font-geist-sans",
-  subsets: [ "latin" ],
-} );
-
-const geistMono = Geist_Mono( {
-  variable: "--font-geist-mono",
-  subsets: [ "latin" ],
+const poppins = Poppins( {
+  subsets: [ 'latin' ],
+  weight: [ '400', '600', '700' ],
 } );
 
 export const metadata: Metadata = {
@@ -26,11 +20,11 @@ export default function RootLayout ( {
 }> ) {
   return (
     <html lang="en">
-      <body className={ `${geistSans.variable} ${geistMono.variable} antialiased` }>
+      <body className={ `${poppins.className} antialiased` }>
         <div className="min-h-screen bg-green-50">
 
           <header className="bg-gradient-to-r from-green-700 to-[#f9c970] text-white text-center py-4">
-            <h1 className="text-xl font-semibold italic">
+            <h1 className="text-xl font-semibold">
               Desenvolvimento Sustentável na Produção de Alimentos
             </h1>
           </header>
