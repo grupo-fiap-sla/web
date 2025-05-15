@@ -1,8 +1,6 @@
-'use client';
-
 import Link from 'next/link';
 
-export function Navbar() {
+export default function Navbar() {
     const links = [
         { href: '/', label: 'Início' },
         { href: '/desafios', label: 'Desafios' },
