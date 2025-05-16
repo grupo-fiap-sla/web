@@ -1,7 +1,7 @@
 import Card from "@/components/card"
 
 export default function Inicio () {
-    return <main className="max-w-4xl mx-auto mt-10 bg-white rounded-xl shadow-md p-6">
+    return <main className="flex flex-col gap-4 max-w-4xl mx-auto mt-10 bg-white rounded-xl shadow-md p-6">
         <h2 className="text-3xl font-bold text-green-700 mb-4">Bem-vindo</h2>
 
         <div className="bg-beige text-gray-800 italic border-l-4 border-green-600 px-4 py-3 mb-4">
@@ -34,6 +34,41 @@ export default function Inicio () {
                 cardText="👨‍🌾 Pequeno agricultor"
             />
         </div>
+
+        {/* Desafios */ }
+        <section id="desafios">
+            <h2 className="text-2xl font-semibold text-green-700 mb-4">Desafios</h2>
+            <ul className="list-disc list-inside space-y-2">
+                <li>Pouca tecnologia no campo</li>
+                <li>Irrigação ineficiente</li>
+                <li>Uso excessivo de fertilizantes</li>
+                <li>Altos custos e perdas de produção</li>
+                <li>Falta de previsibilidade na produção</li>
+            </ul>
+        </section>
+
+        {/* Público-Alvo */ }
+        <section id="publico-alvo">
+            <h2 className="text-2xl font-semibold text-green-700 mb-4">Público-Alvo</h2>
+            <p>
+                Pequenos produtores rurais, cooperativas agrícolas, estudantes, técnicos agrícolas e organizações que atuam com sustentabilidade e inovação no campo.
+            </p>
+        </section>
+
+        {/* Solução */ }
+        <section id="solucao">
+            <h2 className="text-2xl font-semibold text-green-700 mb-4">Solução</h2>
+            <ul className="list-disc list-inside space-y-2">
+                <li>Dispositivo com sensores de umidade, temperatura e luminosidade</li>
+                <li>Monitoramento automatizado com câmeras</li>
+                <li>Sistemas de irrigação programáveis</li>
+                <li>Plataforma com análise preditiva e simulações de cultivo</li>
+                <li>Integração com APIs meteorológicas</li>
+            </ul>
+            <p className="mt-4">
+                O produtor ganha mais tempo, controle e produtividade através de tecnologia aplicada de forma prática e acessível.
+            </p>
+        </section>
 
     </main >
 }
