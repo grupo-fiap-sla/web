@@ -1,7 +1,7 @@
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
 
-export default function NotFound() {
+export default function NotFound () {
     return (
         <section className="w-full min-h-screen flex flex-col justify-center items-center gap-4">
             <Icon
