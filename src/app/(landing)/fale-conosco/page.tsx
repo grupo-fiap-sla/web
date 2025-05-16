@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function FaleConosco() {
+export default function FaleConosco () {
     return (
         <div className="min-h-screen bg-green-50 flex items-center justify-center p-4">
             <div className="w-full max-w-xl bg-white p-6 rounded-xl shadow-md">
@@ -9,7 +9,7 @@ export default function FaleConosco() {
                 </h1>
 
                 <form className="space-y-5">
-                    {/* Nome */}
+                    {/* Nome */ }
                     <div>
                         <label className="block text-green-700 font-semibold mb-1">
                             Nome<span className="text-amber-500">*</span>
@@ -21,7 +21,7 @@ export default function FaleConosco() {
                         />
                     </div>
 
-                    {/* Email */}
+                    {/* Email */ }
                     <div>
                         <label className="block text-green-700 font-semibold mb-1">
                             E-mail<span className="text-amber-500">*</span>
@@ -33,7 +33,7 @@ export default function FaleConosco() {
                         />
                     </div>
 
-                    {/* Assunto */}
+                    {/* Assunto */ }
                     <div>
                         <label className="block text-green-700 font-semibold mb-1">
                             Assunto<span className="text-amber-500">*</span>
@@ -45,13 +45,13 @@ export default function FaleConosco() {
                         />
                     </div>
 
-                    {/* Mensagem */}
+                    {/* Mensagem */ }
                     <div>
                         <label className="block text-green-700 font-semibold mb-1">
                             Mensagem<span className="text-amber-500">*</span>
                         </label>
                         <textarea
-                            rows={5}
+                            rows={ 5 }
                             placeholder="Digite sua mensagem"
                             className="w-full border border-amber-300 bg-amber-100 p-3 rounded-md resize-none outline-none text-black focus:ring-2 focus:ring-green-500"
                         />
