@@ -16,7 +16,7 @@ export default function Navbar () {
                 <Link
                     key={ href }
                     href={ href }
-                    className="px-3 py-1 rounded text-brown-800 hover:bg-[#e5cfa7] hover:text-[#a18c65]"
+                    className="px-3 py-1 rounded text-brown-800 hover:bg-[#e5cfa7] hover:text-[#a18c65] transition"
                 >
                     { label }
                 </Link>
