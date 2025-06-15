@@ -12,7 +12,7 @@ export default function RootLayout ( { children }: Readonly<{ children: React.Re
 
             { children }
 
-            <p className='text-sm text-center py-4'>&copy; Terrabyte - 2025</p>
+            <p className='text-sm text-center mt-2'>&copy; Terrabyte - 2025</p>
         </div>
     );
 }

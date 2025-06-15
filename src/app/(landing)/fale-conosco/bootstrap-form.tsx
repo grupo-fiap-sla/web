@@ -1,29 +1,48 @@
+"use client"
+
 import 'bootstrap/dist/css/bootstrap.css';
+import { FormEvent, useState } from 'react';
 
 export function BootstrapForm () {
-    return <form action="" className="was-validated">
+    function handleSubmit ( e: FormEvent<HTMLFormElement> ) {
+        e.preventDefault()
+        const formData = new FormData( e.target as HTMLFormElement );
+        const data = Object.fromEntries( formData.entries() );
+
+        if ( data.nome.toString().trim().split( ' ' ).filter( Boolean ).length > 1 ) setValidName( true )
+        setValidated( true )
+    }
+
+    const [ validated, setValidated ] = useState<boolean>( false )
+    const [ validName, setValidName ] = useState<boolean>( false )
+
+    return <form onSubmit={ handleSubmit } className={ validated ? "was-validated" : "needs-validation" } noValidate>
         {/* Nome */ }
-        <div className='form-check my-3'>
+        <div className='form-check my-2'>
             <label htmlFor="nome" className="form-label block text-green-700 font-semibold">
                 Nome<span className="text-amber-500">*</span>
             </label>
             <input
-                required
                 name="nome"
                 type="text"
                 placeholder="Seu nome completo"
-                className="form-control"
+                aria-describedby="namefeedback"
+                className={ `form-control ${validated ? ( validName ? 'is-valid' : 'form-control:invalid is-invalid' ) : ''}` }
             />
-            <div className="invalid-feedback">Informe o seu nome e sobrenome</div>
+
+            {
+                validated && !validName && (
+                    <div id='namefeedback' className="invalid-feedback">Informe o seu nome e sobrenome</div>
+                )
+            }
         </div>
 
         {/* Email */ }
-        <div className='form-check my-4'>
+        <div className='form-check my-2'>
             <label htmlFor="email" className="form-label block text-green-700 font-semibold">
                 E-mail<span className="text-amber-500">*</span>
             </label>
             <input
-                required
                 name="email"
                 type="email"
                 placeholder="seu@email.com"
@@ -33,7 +52,7 @@ export function BootstrapForm () {
         </div>
 
         {/* Assunto */ }
-        <div className='form-check my-4'>
+        <div className='form-check my-2'>
             <label htmlFor="assunto" className="form-label block text-green-700 font-semibold">
                 Assunto
             </label>
@@ -51,17 +70,25 @@ export function BootstrapForm () {
                 Descrição da mensagem<span className="text-amber-500">*</span>
             </label>
             <textarea
-                required
                 rows={ 5 }
                 name="mensagem"
-                minLength={ 30 }
+                minLength={ 0 }
                 maxLength={ 500 }
                 placeholder="Digite sua mensagem"
-                className='form-control resize-none'
+                style={ { resize: "none" } }
+                className='form-control'
             />
             <div className="invalid-feedback">Preencha a descrição conforme os requisitos</div>
         </div>
 
-        <button type="submit" className="btn btn-success mt-4 justify-end">Enviar Formulário</button>
+        <div className="text-center">
+            <button
+                type="submit"
+                style={ { padding: '0.75rem 10rem', margin: "auto" } }
+                className="btn btn-success mt-4 justify-end"
+            >
+                Enviar Formulário
+            </button>
+        </div>
     </form>
 }
