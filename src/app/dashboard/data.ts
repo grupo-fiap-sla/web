@@ -11,9 +11,16 @@ export const shortInfo = [
     { label: 'Fazendas', value: 14 },
     { label: 'Trabalhos Ativos', value: 98 },
     { label: 'Pendentes', value: 58 },
-    { label: 'Completos', value: 32 }
-]
+    { label: 'Completos', value: 32 },
+];
 
 export const sidebarLinks = [
-    "Transações", "Trabalhos", "Análises", "Equipe", "Inventário", "Equipamento", "Processos", "Configurações"
-]
+    'Transações',
+    'Trabalhos',
+    'Análises',
+    'Equipe',
+    'Inventário',
+    'Equipamento',
+    'Processos',
+    'Configurações',
+];
