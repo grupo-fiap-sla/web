@@ -4,6 +4,7 @@ export default function Navbar() {
     const links = [
         { href: '/', label: 'Início' },
         { href: '/dashboard', label: 'Dashboard' },
+        { href: '/weather-check', label: 'Condições Climáticas' },
         // { href: '/desafios', label: 'Desafios' },
         // { href: '/publico-alvo', label: 'Público-Alvo' },
         // { href: '/solucao', label: 'Solução' },

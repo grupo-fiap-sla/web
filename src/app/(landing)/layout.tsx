@@ -15,8 +15,6 @@ export default function RootLayout({
             <Navbar />
 
             {children}
-
-            <p className="text-sm text-center mt-2">&copy; Terrabyte - 2025</p>
         </div>
     );
 }
