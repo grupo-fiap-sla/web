@@ -1,4 +1,9 @@
-import { MOCK_DAILY_CODES, MOCK_HOURLY_CODES, simulateDayTemp, simulateHourTemp } from "./helpers";
+import {
+    MOCK_DAILY_CODES,
+    MOCK_HOURLY_CODES,
+    simulateDayTemp,
+    simulateHourTemp,
+} from './helpers';
 
 // Estrutura de dados - Open Meteo
 interface CurrentWeather {
@@ -57,11 +62,13 @@ const generateHourlyData = (baseDate: Date): HourlyForecast => {
 
     for (let hour = 0; hour < 24; hour++) {
         // Data de Previsão
-        const forecastDate = new Date(baseDate.getTime() + hour * 60 * 60 * 1000);
+        const forecastDate = new Date(
+            baseDate.getTime() + hour * 60 * 60 * 1000,
+        );
         forecast.time.push(forecastDate.toISOString());
 
         const hourWeatherCode = hour % MOCK_HOURLY_CODES.length;
-        const temperature = simulateHourTemp(hour)
+        const temperature = simulateHourTemp(hour);
 
         // Dados de Temperatura e Tempo para a Data Prevista
         forecast.temperature_2m.push(temperature);
@@ -82,19 +89,21 @@ const generateDailyData = (baseDate: Date): DailyForecast => {
         sunset: [],
         uv_index_max: [],
     };
-    
+
     for (let day = 0; day < 7; day++) {
-        const forecastDate = new Date(baseDate.getTime() + day * 24 * 60 * 60 * 1000);
+        const forecastDate = new Date(
+            baseDate.getTime() + day * 24 * 60 * 60 * 1000,
+        );
         const dateString = forecastDate.toISOString().split('T')[0]; // Pegar somente a data
-        const dayWeatherCode = MOCK_DAILY_CODES[day % MOCK_DAILY_CODES.length]
+        const dayWeatherCode = MOCK_DAILY_CODES[day % MOCK_DAILY_CODES.length];
 
         forecast.time.push(dateString);
         forecast.weather_code.push(dayWeatherCode);
-        
+
         const [maxTemp, minTemp] = simulateDayTemp(day);
         forecast.temperature_2m_max.push(maxTemp);
         forecast.temperature_2m_min.push(minTemp);
-        
+
         // Horas de Nascer/Pôr do Sol
         forecast.sunrise.push(`${dateString}T06:3${day}`);
         forecast.sunset.push(`${dateString}T18:0${day}`);
@@ -106,7 +115,6 @@ const generateDailyData = (baseDate: Date): DailyForecast => {
 
     return forecast;
 };
-
 
 // Função para Pegar os Dados
 export const getWeatherData = (): WeatherData => {
