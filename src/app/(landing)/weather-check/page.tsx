@@ -86,7 +86,7 @@ export default function WeatherCheck() {
 
     if (loading) {
         return (
-            <div className="h-screen bg-gray-900 flex items-center justify-center text-white">
+            <div className="h-screen bg-zinc-900 flex items-center justify-center text-white">
                 {locationName}
             </div>
         );
@@ -94,7 +94,7 @@ export default function WeatherCheck() {
 
     if (error) {
         return (
-            <div className="h-screen bg-gray-900 flex items-center justify-center text-red-400">
+            <div className="h-screen bg-zinc-900 flex items-center justify-center text-red-400">
                 Erro: {error}
             </div>
         );

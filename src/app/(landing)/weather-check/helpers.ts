@@ -1,7 +1,7 @@
 // Vetor com Dados de Horas Seguintes
 export const MOCK_HOURLY_CODES = [
-    0, 1, 1, 2, 2, 2, 3, 45, 61, 3, 2, 1, 0, 0, 1, 2, 2, 3, 3, 2, 1, 1, 0, 0,
-];
+    10, 11, 11, 12,12, 12, 13, 45, 61, 33, 32, 31, 30, 30, 21, 22, 22, 32, 23, 22, 31, 31, 10, 10,
+]; 
 
 // Vetor com Dados de Dias Seguintes
 export const MOCK_DAILY_CODES = [3, 80, 61, 1, 0, 2, 95];

@@ -1,13 +1,12 @@
 import Link from 'next/link';
 import { sidebarLinks } from './data';
 import { SidebarBtn } from './sidebar-btn';
-import Image from 'next/image';
 
 export function Sidebar() {
     return (
         <aside className="flex flex-col w-64 bg-[#F2EFE6] shadow p-4 lg:block h-screen">
             <Link href="/" className="flex gap-2 items-center mb-4">
-                <Image
+                <img
                     alt=""
                     src="img/terrabyte.png"
                     className="w-8 h-8 object-cover mb-2 rounded"
