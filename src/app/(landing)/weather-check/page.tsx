@@ -2,17 +2,19 @@
 
 import { useState, useEffect } from 'react';
 import { WEATHER_CODES, WeatherIcon } from './weather-icon';
-import { getMockData, WeatherData } from './mockdata';
+import { getWeatherData, WeatherData } from './mockdata';
 import { InfoCard } from './infocard';
 
 export default function WeatherCheck() {
     const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+
     const [location, setLocation] = useState<{
         latitude: number;
         longitude: number;
     } | null>(null);
+
     const [locationName, setLocationName] = useState<string>(
         'Buscando sua localização...',
     );
@@ -39,7 +41,7 @@ export default function WeatherCheck() {
                 setLoading(false);
             },
         );
-    }, []); // Executa apenas uma vez na montagem
+    }, []); // Executa apenas na primeira montagem
 
     // Dados do tempo e nome da localização
     useEffect(() => {
@@ -65,10 +67,7 @@ export default function WeatherCheck() {
                 );
 
                 // --- Busca os dados do tempo (usando mock por enquanto) ---
-                // const weatherApiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${location.latitude}...`;
-                // const weatherResponse = await fetch(weatherApiUrl);
-                // ...
-                const mockData = getMockData();
+                const mockData = getWeatherData();
                 setWeatherData(mockData);
             } catch (err) {
                 if (err instanceof Error) {
@@ -150,6 +149,7 @@ export default function WeatherCheck() {
                     <h2 className="text-sm text-gray-400 uppercase font-bold mb-3 border-b border-white/20 pb-2">
                         Previsão por Hora
                     </h2>
+
                     <div className="flex overflow-x-auto space-x-6 pb-2">
                         {hourly.time
                             .slice(0, 24)

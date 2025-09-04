@@ -1,4 +1,4 @@
-// Códigos de Céu
+// Códigos do Estado do Céu
 export const WEATHER_CODES: { [key: number]: string } = {
     0: 'Céu limpo',
     1: 'Predominantemente limpo',
