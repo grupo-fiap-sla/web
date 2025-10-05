@@ -5,6 +5,7 @@ export default function Navbar() {
         { href: '/', label: 'Início' },
         { href: '/dashboard', label: 'Dashboard' },
         { href: '/weather-check', label: 'Condições Climáticas' },
+        { href: '/crop-tracker', label: 'Controle de Plantio' },
         // { href: '/desafios', label: 'Desafios' },
         // { href: '/publico-alvo', label: 'Público-Alvo' },
         // { href: '/solucao', label: 'Solução' },

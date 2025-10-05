@@ -9,6 +9,7 @@ export const MOCK_DAILY_CODES = [3, 80, 61, 1, 0, 2, 95];
 
 // ! SIMULAÇÃO DE CURVA DE TEMPERATURA POR HORA
 export function simulateHourTemp(hour: number) {
+    
     return Math.round(15 - hour * 0.2 + Math.sin(hour / 2) * 2);
 }
 
@@ -18,3 +19,4 @@ export function simulateDayTemp(day: number) {
     const minTemp = maxTemp - (8 + Math.round(Math.cos(day) * 2));
     return [maxTemp, minTemp];
 }
+
