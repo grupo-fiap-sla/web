@@ -82,8 +82,8 @@ export default function CropGrowthTracker() {
                             Nenhuma plantação encontrada
                         </h2>
                         <p className="mt-2 text-gray-500">
-                            Clique em "Adicionar Plantação" para começar a
-                            monitorar suas culturas.
+                            Clique em &quot;Adicionar Plantação&quot; para
+                            começar a monitorar suas culturas.
                         </p>
                     </div>
                 )}
