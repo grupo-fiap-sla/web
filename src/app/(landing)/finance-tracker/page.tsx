@@ -17,7 +17,7 @@ export default function FarmFinanceManager() {
         new Date().toISOString().slice(0, 7),
     );
 
-    const [crops, _] = useState<Crop[]>(getCrops);
+    const [crops] = useState<Crop[]>(getCrops);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [transactions, setTransactions] =

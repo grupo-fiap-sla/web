@@ -40,8 +40,9 @@ export function CropMetrics({ transactions, crops }: CropMetricsProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {metrics.length === 0 && (
                 <p className="text-gray-500 md:col-span-3">
-                    Nenhum cultivo encontrado. Adicione cultivos no 'Rastreador
-                    de Cultivos' e vincule transações a eles.
+                    Nenhum cultivo encontrado. Adicione cultivos no
+                    &apos;Rastreador de Cultivos&apos; e vincule transações a
+                    eles.
                 </p>
             )}
             {metrics.map((metric) => (
