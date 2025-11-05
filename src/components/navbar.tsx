@@ -6,9 +6,7 @@ export default function Navbar() {
         { href: '/dashboard', label: 'Dashboard' },
         { href: '/weather-check', label: 'Condições Climáticas' },
         { href: '/crop-tracker', label: 'Controle de Plantio' },
-        // { href: '/desafios', label: 'Desafios' },
-        // { href: '/publico-alvo', label: 'Público-Alvo' },
-        // { href: '/solucao', label: 'Solução' },
+        { href: '/finance-tracker', label: 'Gestão Financeira' },
         { href: '/fale-conosco', label: 'Fale Conosco' },
     ];
 

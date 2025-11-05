@@ -32,14 +32,6 @@ export interface Crop {
     name: string;
     variety: string;
     area: number; // Em hectares, crucial para métricas
-    //... outros campos do CropTracker
-}
-
-export interface InventoryItem {
-    id: string;
-    name: string;
-    quantity: number;
-    unit: string;
 }
 
 export interface CropMetric {
